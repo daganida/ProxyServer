@@ -5,3 +5,13 @@
 \\Mac\Home\Desktop\LastAndFinalProxy\bin\Debug\HTTPProxyServer.pdb
 \\Mac\Home\Desktop\LastAndFinalProxy\obj\x86\Debug\HTTPProxyServer.exe
 \\Mac\Home\Desktop\LastAndFinalProxy\obj\x86\Debug\HTTPProxyServer.pdb
+Z:\ProxyServer\bin\Debug\cert.cer
+Z:\ProxyServer\bin\Debug\HTTPProxyServer.exe.config
+Z:\ProxyServer\bin\Debug\HTTPProxyServer.exe
+Z:\ProxyServer\bin\Debug\HTTPProxyServer.pdb
+Z:\ProxyServer\obj\x86\Debug\HTTPProxyServer.exe
+Z:\ProxyServer\obj\x86\Debug\HTTPProxyServer.pdb
+Z:\ProxyServer\bin\Debug\HtmlAgilityPack.dll
+Z:\ProxyServer\bin\Debug\HtmlAgilityPack.pdb
+Z:\ProxyServer\bin\Debug\HtmlAgilityPack.xml
+Z:\ProxyServer\obj\x86\Debug\HTTPProxyServer.csprojResolveAssemblyReference.cache

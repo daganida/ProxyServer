@@ -6,11 +6,13 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.IO;
+using System.IO.Compression;
 using System.Net;
 using System.Net.Sockets;
 using System.Net.Security;
 using System.Security.Authentication;
 using System.Security.Cryptography.X509Certificates;
+using HtmlAgilityPack;
 
 namespace HTTPProxyServer
 {
@@ -252,6 +254,15 @@ namespace HTTPProxyServer
                             //send the response status and response headers
                             WriteResponseStatus(response.StatusCode,response.StatusDescription, myResponseWriter);
                             WriteResponseHeaders(myResponseWriter, responseHeaders);
+                            
+
+                            byte [] resultArray=  updateResponseLinks(responseStream, remoteUri);
+                            if (resultArray != null)
+                            {
+                                responseStream = new MemoryStream(resultArray);
+                            }
+                             
+
 
                             DateTime? expires = null;
                             Byte[] buffer;
@@ -261,10 +272,10 @@ namespace HTTPProxyServer
                                 buffer = new Byte[BUFFER_SIZE];
 
                             int bytesRead;
+                            
 
                             while ((bytesRead = responseStream.Read(buffer, 0, buffer.Length)) > 0)
                             {
-
                                 outStream.Write(buffer, 0, bytesRead);
 
                             }
@@ -306,6 +317,29 @@ namespace HTTPProxyServer
 
         }
 
+        private static byte[] updateResponseLinks(Stream responseStream, string remoteUri)
+        {
+            string res;
+            using (var decompress = new GZipStream(responseStream, CompressionMode.Decompress))
+            using (var sr = new StreamReader(decompress))
+            {
+                res = sr.ReadToEnd();
+                if (!String.IsNullOrEmpty(res))
+                {
+                    res = switchLinks(res, remoteUri);
+                    byte[] array = Encoding.UTF8.GetBytes(res);
+                    Stream ms = new MemoryStream(array);
+                    byte[] result = Compress(ms);
+                    return result;
+
+                }
+
+
+            }
+                            return null;
+
+        }
+
         private static List<Tuple<String,String>> ProcessResponse(HttpWebResponse response)
         {
             String value=null;
@@ -318,6 +352,8 @@ namespace HTTPProxyServer
                     header = s;
                     value = response.Headers[s];
                 }
+                else if(s.ToLower() == "content-length")
+                    continue;
                 else
                     returnHeaders.Add(new Tuple<String, String>(s, response.Headers[s]));
             }
@@ -467,5 +503,128 @@ namespace HTTPProxyServer
 
             return messageData.ToString();
         }
+        private static string switchLinks(string textResponse, string url)
+        {
+            try
+            {
+                HtmlDocument document = new HtmlDocument();
+                document.LoadHtml(textResponse);
+                Uri startUri = new Uri("https://localhost:443/?url=");
+                bool isTwitterUrl = url.Contains("twitter.com");
+                string linkHref = "//link[@href]";
+              //  string imgSrc = "//img[@src]";
+                string aHref = "//a[@href]";
+                if (document.DocumentNode.SelectNodes(aHref) != null ||
+                  /*  document.DocumentNode.SelectNodes(imgSrc) != null ||*/
+                    document.DocumentNode.SelectNodes(linkHref) != null)
+                {
+                    if (document.DocumentNode.SelectNodes(aHref) != null)
+                    {
+                        string uriString = "http://" + url;
+                        foreach (HtmlNode node in document.DocumentNode.SelectNodes(aHref))
+                        {
+                            string attributeValue = node.Attributes["href"].Value;
+                            if (!String.IsNullOrEmpty(attributeValue))
+                            {
+                                Uri firstStep = new Uri(uriString);
+                                Uri secondStep = new Uri(firstStep, attributeValue);
+                                attributeValue = startUri + secondStep.AbsoluteUri;
+                                node.Attributes["href"].Value = attributeValue;
+
+                            }
+
+                        }
+                        /*
+                        if (document.DocumentNode.SelectNodes(imgSrc) != null)
+                        {
+                            foreach (HtmlNode node in document.DocumentNode.SelectNodes(imgSrc))
+                            {
+                                string attributeValue = node.Attributes["src"].Value;
+                                if (!String.IsNullOrEmpty(attributeValue))
+                                {
+                                    Uri firstStep = new Uri(uriString);
+                                    Uri secondStep = new Uri(firstStep, attributeValue);
+                                    attributeValue = startUri + secondStep.AbsoluteUri;
+                                    node.Attributes["src"].Value = attributeValue;
+
+                                }
+
+                            }
+                        }
+                         * */
+                        if (document.DocumentNode.SelectNodes(linkHref) != null)
+                        {
+                            foreach (HtmlNode node in document.DocumentNode.SelectNodes(linkHref))
+                            {
+                                string attributeValue = node.Attributes["href"].Value;
+                                if (!String.IsNullOrEmpty(attributeValue))
+                                {
+                                    Uri firstStep = new Uri(uriString);
+                                    Uri secondStep = new Uri(firstStep, attributeValue);
+                                    attributeValue = startUri + secondStep.AbsoluteUri;
+                                    node.Attributes["href"].Value = attributeValue;
+
+                                }
+
+                            }
+                        }
+                        if (isTwitterUrl)
+                        {
+                            foreach (HtmlNode node in document.DocumentNode.SelectNodes("//form[@action]"))
+                            {
+                                string attributeValue = node.Attributes["action"].Value;
+                                if (!String.IsNullOrEmpty(attributeValue))
+                                {
+                                    Uri firstStep = new Uri(uriString);
+                                    Uri secondStep = new Uri(firstStep, attributeValue);
+                                    attributeValue = startUri + secondStep.AbsoluteUri;
+                                    node.Attributes["action"].Value = attributeValue;
+
+                                }
+
+                            }
+
+
+                        }
+                    }
+                }
+                return document.DocumentNode.OuterHtml;
+
+
+            }
+            catch (Exception e)
+            {
+                return "";
+            }
+
+
+
+
+
+
+        }
+        /*
+      private static byte[] Compress(Stream input)
+        {
+            using(var compressStream = new MemoryStream())
+            using(var compressor = new DeflateStream(compressStream, CompressionMode.Compress))
+            {
+                input.CopyTo(compressor);
+                compressor.Close();
+                return compressStream.ToArray();
+            }
+        }
+         * */
+        private static byte[] Compress(Stream input)
+        {
+            using (var compressStream = new MemoryStream())
+            using (var compressor = new GZipStream(compressStream, CompressionMode.Compress))
+            {
+                input.CopyTo(compressor);
+                compressor.Close();
+                return compressStream.ToArray();
+            }
+        }
+        
     }
 }
