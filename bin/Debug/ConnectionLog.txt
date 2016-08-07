@@ -964,3 +964,993 @@ Site Url : http://abs.twimg.com/favicons/favicon.ico
 
 
 
+Connection:Time : 8/7/2016 11:25:05 AM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 11:25:06 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-homepage-css-v36,00.css
+
+
+
+Connection:Time : 8/7/2016 11:25:06 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-media_icons-css-v3,00.css
+
+
+
+Connection:Time : 8/7/2016 11:25:06 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-media_icons-css-v3,00.css
+
+
+
+Connection:Time : 8/7/2016 11:25:06 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/images/articlepiclightbox/colorbox_homepage.css
+
+
+
+Connection:Time : 8/7/2016 11:25:06 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,generator-homepage-css-v335,00.css
+
+
+
+Connection:Time : 8/7/2016 11:25:12 AM
+IP Address : 127.0.0.1
+Site Url : http://http/styles/ie.css/images/topstory_date_digit_v4_6.png
+
+
+
+Connection:Time : 8/7/2016 11:26:30 AM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 11:26:31 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/images/articlepiclightbox/colorbox_homepage.css
+
+
+
+Connection:Time : 8/7/2016 11:26:31 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/images/articlepiclightbox/colorbox_homepage.css
+
+
+
+Connection:Time : 8/7/2016 11:26:31 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/ext/Common/Api/Video/CmmLightboxPlayerCss_1024/0,14271,060814190755,00.css
+
+
+
+Connection:Time : 8/7/2016 11:26:31 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,generator-homepage-css-v335,00.css
+
+
+
+Connection:Time : 8/7/2016 11:26:31 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-homepage-css-v36,00.css
+
+
+
+Connection:Time : 8/7/2016 11:26:35 AM
+IP Address : 127.0.0.1
+Site Url : http://http/styles/ie.css
+
+
+
+Connection:Time : 8/7/2016 11:26:36 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/home/0,7340,L-10511,00.html
+
+
+
+Connection:Time : 8/7/2016 11:26:39 AM
+IP Address : 127.0.0.1
+Site Url : http://http/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-homepage-css-v36,00.css
+
+
+
+Connection:Time : 8/7/2016 11:26:40 AM
+IP Address : 127.0.0.1
+Site Url : http://http/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,generator-homepage-css-v335,00.css
+
+
+
+Connection:Time : 8/7/2016 11:26:40 AM
+IP Address : 127.0.0.1
+Site Url : http://http/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-media_icons-css-v3,00.css
+
+
+
+Connection:Time : 8/7/2016 11:26:40 AM
+IP Address : 127.0.0.1
+Site Url : http://http/ext/Common/Api/Video/CmmLightboxPlayerCss_1024/0,14271,060814190755,00.css
+
+
+
+Connection:Time : 8/7/2016 11:28:00 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 11:31:42 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 11:34:25 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 11:34:27 AM
+IP Address : 127.0.0.1
+Site Url : http://http/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,generator-homepage-css-v335,00.css
+
+
+
+Connection:Time : 8/7/2016 11:34:27 AM
+IP Address : 127.0.0.1
+Site Url : http://http/images/articlepiclightbox/colorbox_homepage.css
+
+
+
+Connection:Time : 8/7/2016 11:34:27 AM
+IP Address : 127.0.0.1
+Site Url : http://http/ext/Common/Api/Video/CmmLightboxPlayerCss_1024/0,14271,060814190755,00.css
+
+
+
+Connection:Time : 8/7/2016 11:34:28 AM
+IP Address : 127.0.0.1
+Site Url : http://http/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-homepage-css-v36,00.css
+
+
+
+Connection:Time : 8/7/2016 11:34:29 AM
+IP Address : 127.0.0.1
+Site Url : http://http/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-media_icons-css-v3,00.css/Common/Api/Scripts/jquery-1.4.2.min.js
+
+
+
+Connection:Time : 8/7/2016 11:35:42 AM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 11:35:44 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-media_icons-css-v3,00.css
+
+
+
+Connection:Time : 8/7/2016 11:35:44 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-media_icons-css-v3,00.css
+
+
+
+Connection:Time : 8/7/2016 11:35:44 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/ext/Common/Api/Video/CmmLightboxPlayerCss_1024/0,14271,060814190755,00.css
+
+
+
+Connection:Time : 8/7/2016 11:35:44 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,generator-homepage-css-v335,00.css
+
+
+
+Connection:Time : 8/7/2016 11:35:44 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-homepage-css-v36,00.css
+
+
+
+Connection:Time : 8/7/2016 11:35:48 AM
+IP Address : 127.0.0.1
+Site Url : http://http/styles/ie.css
+
+
+
+Connection:Time : 8/7/2016 11:36:14 AM
+IP Address : 127.0.0.1
+Site Url : www.twitter.com
+
+
+
+Connection:Time : 8/7/2016 11:36:57 AM
+IP Address : 127.0.0.1
+Site Url : www.twitter.com
+
+
+
+Connection:Time : 8/7/2016 11:36:59 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/a/1470279950/css/t1/twitter_more_1.bundle.css
+
+
+
+Connection:Time : 8/7/2016 11:36:59 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/a/1470279950/css/t1/twitter_more_1.bundle.css
+
+
+
+Connection:Time : 8/7/2016 11:36:59 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/a/1470279950/css/t1/twitter_more_2.bundle.css
+
+
+
+Connection:Time : 8/7/2016 11:36:59 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/c/swift/en/bundle/timeline.b3c781146f22aa210151a0523e26f421984cf107.js
+
+
+
+Connection:Time : 8/7/2016 11:36:59 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/c/swift/en/bundle/timeline.b3c781146f22aa210151a0523e26f421984cf107.js
+
+
+
+Connection:Time : 8/7/2016 11:36:59 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/c/swift/en/bundle/boot.9172051df02072b180929f5f9b0393480498ae26.js
+
+
+
+Connection:Time : 8/7/2016 11:37:01 AM
+IP Address : 127.0.0.1
+Site Url : http://abs.twimg.com/favicons/favicon.ico
+
+
+
+Connection:Time : 8/7/2016 11:37:09 AM
+IP Address : 127.0.0.1
+Site Url : www.twitter.com
+
+
+
+Connection:Time : 8/7/2016 11:37:09 AM
+IP Address : 127.0.0.1
+Site Url : http://abs.twimg.com/favicons/favicon.ico
+
+
+
+Connection:Time : 8/7/2016 11:37:10 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/a/1470279950/css/t1/twitter_core.bundle.css
+
+
+
+Connection:Time : 8/7/2016 11:37:11 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/c/swift/en/bundle/timeline.b3c781146f22aa210151a0523e26f421984cf107.js
+
+
+
+Connection:Time : 8/7/2016 11:37:11 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/c/swift/en/bundle/timeline.b3c781146f22aa210151a0523e26f421984cf107.js
+
+
+
+Connection:Time : 8/7/2016 11:37:11 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/c/swift/en/bundle/timeline.b3c781146f22aa210151a0523e26f421984cf107.js
+
+
+
+Connection:Time : 8/7/2016 11:37:11 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/c/swift/en/bundle/boot.9172051df02072b180929f5f9b0393480498ae26.js
+
+
+
+Connection:Time : 8/7/2016 11:37:11 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/c/swift/en/init.723e7f2eed9a7827554b57a1391df7f7cba1a9cf.js
+
+
+
+Connection:Time : 8/7/2016 11:37:13 AM
+IP Address : 127.0.0.1
+Site Url : http://abs.twimg.com/favicons/favicon.ico
+
+
+
+Connection:Time : 8/7/2016 11:37:14 AM
+IP Address : 127.0.0.1
+Site Url : http://www.twitter.com/opensearch.xml
+
+
+
+Connection:Time : 8/7/2016 11:37:24 AM
+IP Address : 127.0.0.1
+Site Url : www.twitter.com
+
+
+
+Connection:Time : 8/7/2016 11:37:24 AM
+IP Address : 127.0.0.1
+Site Url : http://abs.twimg.com/favicons/favicon.ico
+
+
+
+Connection:Time : 8/7/2016 11:37:25 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/a/1470279950/css/t1/twitter_more_2.bundle.css
+
+
+
+Connection:Time : 8/7/2016 11:37:26 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/a/1470279950/css/t1/twitter_more_1.bundle.css
+
+
+
+Connection:Time : 8/7/2016 11:37:26 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/a/1470279950/css/t1/twitter_more_1.bundle.css
+
+
+
+Connection:Time : 8/7/2016 11:37:26 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/c/swift/en/init.723e7f2eed9a7827554b57a1391df7f7cba1a9cf.js
+
+
+
+Connection:Time : 8/7/2016 11:37:26 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/c/swift/en/bundle/boot.9172051df02072b180929f5f9b0393480498ae26.js
+
+
+
+Connection:Time : 8/7/2016 11:37:26 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/c/swift/en/bundle/boot.9172051df02072b180929f5f9b0393480498ae26.js
+
+
+
+Connection:Time : 8/7/2016 11:37:27 AM
+IP Address : 127.0.0.1
+Site Url : http://abs.twimg.com/favicons/favicon.ico
+
+
+
+Connection:Time : 8/7/2016 11:37:37 AM
+IP Address : 127.0.0.1
+Site Url : http://abs.twimg.com/favicons/favicon.ico
+
+
+
+Connection:Time : 8/7/2016 11:37:38 AM
+IP Address : 127.0.0.1
+Site Url : https://twitter.com/sessions
+
+
+
+Connection:Time : 8/7/2016 11:37:52 AM
+IP Address : 127.0.0.1
+Site Url : https://twitter.com/sessions
+
+
+
+Connection:Time : 8/7/2016 11:37:53 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/a/1470279950/css/t1/twitter_core.bundle.css
+
+
+
+Connection:Time : 8/7/2016 11:37:53 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/a/1470279950/css/t1/twitter_more_1.bundle.css
+
+
+
+Connection:Time : 8/7/2016 11:37:53 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/a/1470279950/css/t1/twitter_more_2.bundle.css
+
+
+
+Connection:Time : 8/7/2016 11:37:53 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/c/swift/en/init.723e7f2eed9a7827554b57a1391df7f7cba1a9cf.js
+
+
+
+Connection:Time : 8/7/2016 11:37:53 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/c/swift/en/bundle/timeline.b3c781146f22aa210151a0523e26f421984cf107.js
+
+
+
+Connection:Time : 8/7/2016 11:37:54 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/c/swift/en/bundle/boot.9172051df02072b180929f5f9b0393480498ae26.js
+
+
+
+Connection:Time : 8/7/2016 11:37:55 AM
+IP Address : 127.0.0.1
+Site Url : http://abs.twimg.com/favicons/favicon.ico
+
+
+
+Connection:Time : 8/7/2016 11:38:13 AM
+IP Address : 127.0.0.1
+Site Url : https://twitter.com/sessions
+
+
+
+Connection:Time : 8/7/2016 11:38:31 AM
+IP Address : 127.0.0.1
+Site Url : https://twitter.com/sessions
+
+
+
+Connection:Time : 8/7/2016 11:38:31 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/a/1470279950/css/t1/twitter_core.bundle.css
+
+
+
+Connection:Time : 8/7/2016 11:38:31 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/a/1470279950/css/t1/twitter_more_1.bundle.css
+
+
+
+Connection:Time : 8/7/2016 11:38:31 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/a/1470279950/css/t1/twitter_more_1.bundle.css
+
+
+
+Connection:Time : 8/7/2016 11:38:32 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/c/swift/en/init.723e7f2eed9a7827554b57a1391df7f7cba1a9cf.js
+
+
+
+Connection:Time : 8/7/2016 11:38:32 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/c/swift/en/bundle/boot.9172051df02072b180929f5f9b0393480498ae26.js
+
+
+
+Connection:Time : 8/7/2016 11:38:32 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/c/swift/en/bundle/boot.9172051df02072b180929f5f9b0393480498ae26.js
+
+
+
+Connection:Time : 8/7/2016 11:38:33 AM
+IP Address : 127.0.0.1
+Site Url : http://abs.twimg.com/favicons/favicon.ico
+
+
+
+Connection:Time : 8/7/2016 11:38:44 AM
+IP Address : 127.0.0.1
+Site Url : https://twitter.com/sessions
+
+
+
+Connection:Time : 8/7/2016 11:38:47 AM
+IP Address : 127.0.0.1
+Site Url : http://abs.twimg.com/favicons/favicon.ico
+
+
+
+Connection:Time : 8/7/2016 11:39:20 AM
+IP Address : 127.0.0.1
+Site Url : https://twitter.com/sessions
+
+
+
+Connection:Time : 8/7/2016 11:39:21 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/a/1470279950/css/t1/twitter_more_2.bundle.css
+
+
+
+Connection:Time : 8/7/2016 11:39:21 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/a/1470279950/css/t1/twitter_more_2.bundle.css
+
+
+
+Connection:Time : 8/7/2016 11:39:21 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/a/1470279950/css/t1/twitter_core.bundle.css
+
+
+
+Connection:Time : 8/7/2016 11:39:22 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/c/swift/en/bundle/timeline.b3c781146f22aa210151a0523e26f421984cf107.js
+
+
+
+Connection:Time : 8/7/2016 11:39:22 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/c/swift/en/bundle/timeline.b3c781146f22aa210151a0523e26f421984cf107.js
+
+
+
+Connection:Time : 8/7/2016 11:39:22 AM
+IP Address : 127.0.0.1
+Site Url : https://abs.twimg.com/c/swift/en/bundle/boot.9172051df02072b180929f5f9b0393480498ae26.js
+
+
+
+Connection:Time : 8/7/2016 11:39:24 AM
+IP Address : 127.0.0.1
+Site Url : http://abs.twimg.com/favicons/favicon.ico
+
+
+
+Connection:Time : 8/7/2016 11:39:28 AM
+IP Address : 127.0.0.1
+Site Url : https://twitter.com/sessions
+
+
+
+Connection:Time : 8/7/2016 11:39:30 AM
+IP Address : 127.0.0.1
+Site Url : http://abs.twimg.com/favicons/favicon.ico
+
+
+
+Connection:Time : 8/7/2016 11:41:25 AM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 11:41:25 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/images/articlepiclightbox/colorbox_homepage.css
+
+
+
+Connection:Time : 8/7/2016 11:41:26 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/ext/Common/Api/Video/CmmLightboxPlayerCss_1024/0,14271,060814190755,00.css
+
+
+
+Connection:Time : 8/7/2016 11:41:26 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,generator-homepage-css-v335,00.css
+
+
+
+Connection:Time : 8/7/2016 11:41:26 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-homepage-css-v36,00.css
+
+
+
+Connection:Time : 8/7/2016 11:41:26 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-media_icons-css-v3,00.css
+
+
+
+Connection:Time : 8/7/2016 11:41:30 AM
+IP Address : 127.0.0.1
+Site Url : http://http/styles/ie.css
+
+
+
+Connection:Time : 8/7/2016 11:42:27 AM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 11:42:28 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-media_icons-css-v3,00.css
+
+
+
+Connection:Time : 8/7/2016 11:42:28 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,generator-homepage-css-v335,00.css
+
+
+
+Connection:Time : 8/7/2016 11:42:28 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/ext/Common/Api/Video/CmmLightboxPlayerCss_1024/0,14271,060814190755,00.css
+
+
+
+Connection:Time : 8/7/2016 11:42:28 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-homepage-css-v36,00.css
+
+
+
+Connection:Time : 8/7/2016 11:42:28 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/images/articlepiclightbox/colorbox_homepage.css
+
+
+
+Connection:Time : 8/7/2016 11:42:32 AM
+IP Address : 127.0.0.1
+Site Url : http://http/styles/ie.css
+
+
+
+Connection:Time : 8/7/2016 11:45:41 AM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 11:49:14 AM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 11:54:53 AM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 11:56:42 AM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 11:56:57 AM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/ext/Common/Api/Video/CmmLightboxPlayerCss_1024/0,14271,060814190755,00.css
+
+
+
+Connection:Time : 8/7/2016 12:00:29 PM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 12:00:59 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/ext/Common/Api/Video/CmmLightboxPlayerCss_1024/0,14271,060814190755,00.css
+
+
+
+Connection:Time : 8/7/2016 12:00:59 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/ext/Common/Api/Video/CmmLightboxPlayerCss_1024/0,14271,060814190755,00.css
+
+
+
+Connection:Time : 8/7/2016 12:05:11 PM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 12:05:12 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,generator-homepage-css-v335,00.css
+
+
+
+Connection:Time : 8/7/2016 12:05:13 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/images/articlepiclightbox/colorbox_homepage.css
+
+
+
+Connection:Time : 8/7/2016 12:05:13 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/ext/Common/Api/Video/CmmLightboxPlayerCss_1024/0,14271,060814190755,00.css
+
+
+
+Connection:Time : 8/7/2016 12:05:13 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-homepage-css-v36,00.css
+
+
+
+Connection:Time : 8/7/2016 12:05:13 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-media_icons-css-v3,00.css
+
+
+
+Connection:Time : 8/7/2016 12:05:15 PM
+IP Address : 127.0.0.1
+Site Url : http://http/styles/ie.css
+
+
+
+Connection:Time : 8/7/2016 12:05:43 PM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 12:05:44 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-media_icons-css-v3,00.css
+
+
+
+Connection:Time : 8/7/2016 12:05:44 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/ext/Common/Api/Video/CmmLightboxPlayerCss_1024/0,14271,060814190755,00.css
+
+
+
+Connection:Time : 8/7/2016 12:05:45 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,generator-homepage-css-v335,00.css
+
+
+
+Connection:Time : 8/7/2016 12:05:45 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-homepage-css-v36,00.css
+
+
+
+Connection:Time : 8/7/2016 12:05:45 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/images/articlepiclightbox/colorbox_homepage.css
+
+
+
+Connection:Time : 8/7/2016 12:05:48 PM
+IP Address : 127.0.0.1
+Site Url : http://http/styles/ie.css
+
+
+
+Connection:Time : 8/7/2016 12:07:28 PM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 12:07:29 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-media_icons-css-v3,00.css
+
+
+
+Connection:Time : 8/7/2016 12:07:29 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-media_icons-css-v3,00.css
+
+
+
+Connection:Time : 8/7/2016 12:07:29 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/ext/Common/Api/Video/CmmLightboxPlayerCss_1024/0,14271,060814190755,00.css
+
+
+
+Connection:Time : 8/7/2016 12:07:29 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,generator-homepage-css-v335,00.css
+
+
+
+Connection:Time : 8/7/2016 12:07:29 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-homepage-css-v36,00.css
+
+
+
+Connection:Time : 8/7/2016 12:07:34 PM
+IP Address : 127.0.0.1
+Site Url : http://http/styles/ie.css
+
+
+
+Connection:Time : 8/7/2016 12:09:00 PM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 12:09:13 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/ext/Common/Api/Video/CmmLightboxPlayerCss_1024/0,14271,060814190755,00.css
+
+
+
+Connection:Time : 8/7/2016 12:10:21 PM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 12:11:29 PM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 12:14:31 PM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 12:14:48 PM
+IP Address : 127.0.0.1
+Site Url : http://http/styles/ie.css
+
+
+
+Connection:Time : 8/7/2016 12:16:14 PM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 12:16:15 PM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il/home/0,7340,L-8,00.html
+
+
+
+Connection:Time : 8/7/2016 12:16:15 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,sprites-homepage-css-v36,00.css
+
+
+
+Connection:Time : 8/7/2016 12:16:16 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/ext/Common/Api/Video/CmmLightboxPlayerCss_1024/0,14271,060814190755,00.css
+
+
+
+Connection:Time : 8/7/2016 12:16:16 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/novgnpre/Common/Api/StaticFile/CmmApiStaticFileInclude/0,14179,generator-homepage-css-v335,00.css
+
+
+
+Connection:Time : 8/7/2016 12:16:16 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/images/articlepiclightbox/colorbox_homepage.css
+
+
+
+Connection:Time : 8/7/2016 12:16:16 PM
+IP Address : 127.0.0.1
+Site Url : http://www.ynet.co.il/images/articlepiclightbox/colorbox_homepage.css
+
+
+
+Connection:Time : 8/7/2016 12:16:18 PM
+IP Address : 127.0.0.1
+Site Url : http://http/styles/ie.css
+
+
+
+Connection:Time : 8/7/2016 12:17:29 PM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 12:18:10 PM
+IP Address : 127.0.0.1
+Site Url : www.twitter.com
+
+
+
+Connection:Time : 8/7/2016 12:18:16 PM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 12:18:21 PM
+IP Address : 127.0.0.1
+Site Url : www.twitter.com
+
+
+
+Connection:Time : 8/7/2016 12:19:26 PM
+IP Address : 127.0.0.1
+Site Url : www.twitter.com
+
+
+
+Connection:Time : 8/7/2016 12:19:38 PM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 12:19:55 PM
+IP Address : 127.0.0.1
+Site Url : www.twitter.com
+
+
+
+Connection:Time : 8/7/2016 12:21:22 PM
+IP Address : 127.0.0.1
+Site Url : www.twitter.com
+
+
+
+Connection:Time : 8/7/2016 12:22:08 PM
+IP Address : 127.0.0.1
+Site Url : www.twitter.com
+
+
+
+Connection:Time : 8/7/2016 12:23:18 PM
+IP Address : 127.0.0.1
+Site Url : www.twitter.com
+
+
+
+Connection:Time : 8/7/2016 12:25:43 PM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 12:25:46 PM
+IP Address : 127.0.0.1
+Site Url : www.twitter.com
+
+
+
+Connection:Time : 8/7/2016 12:27:23 PM
+IP Address : 127.0.0.1
+Site Url : www.ynet.co.il
+
+
+
+Connection:Time : 8/7/2016 12:27:39 PM
+IP Address : 127.0.0.1
+Site Url : www.twitter.com
+
+
+
+Connection:Time : 8/7/2016 12:28:38 PM
+IP Address : 127.0.0.1
+Site Url : www.twitter.com
+
+
+
